@@ -1,5 +1,62 @@
-export default function Menu() {
+const menuContent = [
+	{
+		"src": "images/img-01.jpg",
+		"h4": "Special Drinks 1",
+		"p": "Sed id magna vitae eros sagittis euismod.",
+		"h5": "$7.79",
+	},
+	{
+		"src": "images/img-02.jpg",
+		"h4": "Special Drinks 2",
+		"p": "Sed id magna vitae eros sagittis euismod.",
+		"h5": "$9.89",
+	},
+	{
+		"src": "images/img-03.jpg",
+		"h4": "Special Drinks 3",
+		"p": "Sed id magna vitae eros sagittis euismod.",
+		"h5": "$11.75",
+	},
+	{
+		"src": "images/img-04.jpg",
+		"h4": "Special Lunch 1",
+		"p": "Sed id magna vitae eros sagittis euismod.",
+		"h5": "$10.62",
+	},
+	{
+		"src": "images/img-05.jpg",
+		"h4": "Special Lunch 2",
+		"p": "Sed id magna vitae eros sagittis euismod.",
+		"h5": "$17.89",
+	},
+	{
+		"src": "images/img-06.jpg",
+		"h4": "Special Lunch 3",
+		"p": "Sed id magna vitae eros sagittis euismod.",
+		"h5": "$8.21",
+	},
+	{
+		"src": "images/img-07.jpg",
+		"h4": "Special Dinner 1",
+		"p": "Sed id magna vitae eros sagittis euismod.",
+		"h5": "$5.90",
+	},
+	{
+		"src": "images/img-08.jpg",
+		"h4": "Special Dinner 2",
+		"p": "Sed id magna vitae eros sagittis euismod.",
+		"h5": "$15.74",
+	},
+	{
+		"src": "images/img-09.jpg",
+		"h4": "Special Dinner 3",
+		"p": "Sed id magna vitae eros sagittis euismod.",
+		"h5": "$19.56",
+	},
+];
 
+
+export default function Menu() {
     return (
         <div className="menu-box">
 		<div className="container">
@@ -11,119 +68,22 @@ export default function Menu() {
 					</div>
 				</div>
 			</div>
-			{/* <div className="row">
-				<div className="col-lg-12">
-					<div className="special-menu text-center">
-						<div className="button-group filter-button-group">
-							<button className="active" data-filter="*">All</button>
-							<button data-filter=".drinks">Drinks</button>
-							<button data-filter=".lunch">Lunch</button>
-							<button data-filter=".dinner">Dinner</button>
-						</div>
-					</div>
-				</div>
-			</div> */}
 
 			<div className="row special-list">
-				<div className="col-lg-4 col-md-6 special-grid drinks">
-					<div className="gallery-single fix">
-						<img src="images/img-01.jpg" className="img-fluid" alt="Image"/>
-						<div className="why-text">
-							<h4>Special Drinks 1</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $7.79</h5>
+				{menuContent.map((menu, index) =>(
+					<div key={index} className="col-lg-4 col-md-6 special-grid drinks">
+						<div className="gallery-single fix">
+							<img src={menu.src} className="img-fluid" alt="Imager"/>
+							<div className="why-text">
+								<h4>{menu.h4}</h4>
+								<p>{menu.p}</p>
+								<h5>{menu.h5}</h5>
+							</div>
 						</div>
 					</div>
-				</div>
+				))}
 				
-				<div className="col-lg-4 col-md-6 special-grid drinks">
-					<div className="gallery-single fix">
-						<img src="images/img-02.jpg" className="img-fluid" alt="Image"/>
-						<div className="why-text">
-							<h4>Special Drinks 2</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $9.79</h5>
-						</div>
-					</div>
-				</div>
-				
-				<div className="col-lg-4 col-md-6 special-grid drinks">
-					<div className="gallery-single fix">
-						<img src="images/img-03.jpg" className="img-fluid" alt="Image"/>
-						<div className="why-text">
-							<h4>Special Drinks 3</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $10.79</h5>
-						</div>
-					</div>
-				</div>
-				
-				<div className="col-lg-4 col-md-6 special-grid lunch">
-					<div className="gallery-single fix">
-						<img src="images/img-04.jpg" className="img-fluid" alt="Image"/>
-						<div className="why-text">
-							<h4>Special Lunch 1</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $15.79</h5>
-						</div>
-					</div>
-				</div>
-				
-				<div className="col-lg-4 col-md-6 special-grid lunch">
-					<div className="gallery-single fix">
-						<img src="images/img-05.jpg" className="img-fluid" alt="Image"/>
-						<div className="why-text">
-							<h4>Special Lunch 2</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $18.79</h5>
-						</div>
-					</div>
-				</div>
-				
-				<div className="col-lg-4 col-md-6 special-grid lunch">
-					<div className="gallery-single fix">
-						<img src="images/img-06.jpg" className="img-fluid" alt="Image"/>
-						<div className="why-text">
-							<h4>Special Lunch 3</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $20.79</h5>
-						</div>
-					</div>
-				</div>
-				
-				<div className="col-lg-4 col-md-6 special-grid dinner">
-					<div className="gallery-single fix">
-						<img src="images/img-07.jpg" className="img-fluid" alt="Image"/>
-						<div className="why-text">
-							<h4>Special Dinner 1</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $25.79</h5>
-						</div>
-					</div>
-				</div>
-				
-				<div className="col-lg-4 col-md-6 special-grid dinner">
-					<div className="gallery-single fix">
-						<img src="images/img-08.jpg" className="img-fluid" alt="Image"/>
-						<div className="why-text">
-							<h4>Special Dinner 2</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $22.79</h5>
-						</div>
-					</div>
-				</div>
-				
-				<div className="col-lg-4 col-md-6 special-grid dinner">
-					<div className="gallery-single fix">
-						<img src="images/img-09.jpg" className="img-fluid" alt="Image"/>
-						<div className="why-text">
-							<h4>Special Dinner 3</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $24.79</h5>
-						</div>
-					</div>
-				</div>
-                </div>
+			</div>
 		</div>
 	</div>
     )

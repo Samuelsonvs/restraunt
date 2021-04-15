@@ -131,10 +131,3 @@
     height: 909px;
     overflow: hidden;
 }
-.slice-pic {
-    opacity: 0.8;
-    z-index: -1;
-    max-width: none;
-    height: 100%;
-    width: 100%;
-}

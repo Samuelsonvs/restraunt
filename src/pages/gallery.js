@@ -1,4 +1,5 @@
 import { SRLWrapper } from "simple-react-lightbox";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 
 const options = {
@@ -29,6 +30,7 @@ export default function Galery() {
 					</div>
 				</div>
 			</div>
+		<SimpleReactLightbox>
         <SRLWrapper options={options}>
 			<div className="tz-gallery">
 				<div className="row">
@@ -65,6 +67,7 @@ export default function Galery() {
 				</div>
 			</div>
           </SRLWrapper>
+		  </SimpleReactLightbox>
 		</div>
 	</div>
     )
